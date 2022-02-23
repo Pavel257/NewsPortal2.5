@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title> Order board</title>
+</head>
+
+
+
+<table>
+    <tr>
+        <td>
+            <h4><em><span style="color: #008000;">Название продукта</span></em></h4>
+            <hr/>
+        </td>
+        <td>
+            <h4><em><span style="color: #008000;">Стоимость</span></em></h4>
+            <hr/>
+        </td>
+
+    </tr>
+    {% for prod in product %}
+    <tr>
+        <td>
+            {{ prod.name }}
+            <hr/>
+        </td>
+        <td>
+            {{ prod.price }}
+            <hr/>
+        </td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+<div>
+    <h1><a href="/">Order board</a></h1>
+</div>
+<div>
+    <button>
+        <a href="{% url 'new_order'%}"> Добавить заказ </a>
+    </button>
+</div>
+</html>
+{% block content %}
+{% endblock %}
